@@ -1,0 +1,49 @@
+# CoreConvert — Python dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Core server ──────────────────────────────────────────────────────────────
+flask>=3.0
+flask-cors>=4.0
+
+# ── Data conversions ─────────────────────────────────────────────────────────
+pandas>=2.0
+openpyxl>=3.1          # xlsx read/write
+lxml>=4.9              # XML support
+
+# ── Image conversions ────────────────────────────────────────────────────────
+Pillow>=10.0
+pillow-heif>=0.16      # HEIC/HEIF (iPhone images)
+svglib>=1.5            # SVG → PNG / PDF  (uses reportlab)
+
+# ── Document conversions ─────────────────────────────────────────────────────
+# DOCX → PDF  (Option A: needs MS Word or LibreOffice on Windows)
+docx2pdf>=0.1.8
+# DOCX → PDF  (Option B: pure-Python fallback)
+python-docx>=1.1
+reportlab>=4.0
+# DOCX → HTML
+mammoth>=1.6
+# PDF → DOCX
+pdf2docx>=0.5
+# PDF → TXT
+pymupdf>=1.23           # import as fitz
+# HTML → PDF  (primary)
+weasyprint>=60.0
+# HTML → PDF  (fallback if weasyprint fails)
+xhtml2pdf>=0.2
+# HTML ↔ Markdown
+markdown>=3.5
+markdownify>=0.12
+
+# ── Audio conversions ────────────────────────────────────────────────────────
+# Requires ffmpeg on PATH: https://ffmpeg.org/download.html
+pydub>=0.25
+
+# ── Video conversions ────────────────────────────────────────────────────────
+# Requires ffmpeg on PATH
+moviepy>=1.0.3
+
+# ── Archive conversions ──────────────────────────────────────────────────────
+# ZIP ↔ TAR: uses Python stdlib (no install needed)
+# RAR → ZIP: needs unrar on PATH  (Windows 10/11 ships bsdtar in System32)
+rarfile>=4.0

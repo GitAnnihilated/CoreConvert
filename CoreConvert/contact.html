@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — CoreConvert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 7rem 1.5rem 4rem;
+    }
+    .contact-wrap h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+    .contact-wrap h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 2rem 0 0.5rem;
+      color: var(--text, #0f172a);
+    }
+    .contact-wrap p,
+    .contact-wrap li {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: var(--text-muted, #334155);
+    }
+    .contact-wrap ul {
+      padding-left: 1.4rem;
+      margin: 0.4rem 0 0.8rem;
+    }
+    .contact-wrap li { margin-bottom: 0.3rem; }
+    .contact-wrap strong { color: var(--text, #0f172a); }
+    hr.divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 2.5rem 0;
+    }
+
+    /* ── Form ─────────────────────────────────────────────────── */
+    .contact-form {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #374151;
+    }
+    .form-group input,
+    .form-group textarea {
+      padding: 0.65rem 0.9rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #0f172a;
+      background: #fafafa;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+      background: #fff;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+    .btn-send {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.6rem;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity .2s, transform .1s;
+    }
+    .btn-send:hover   { opacity: 0.9; }
+    .btn-send:active  { transform: scale(0.98); }
+    .btn-send:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    /* ── Feedback banner ──────────────────────────────────────── */
+    .form-feedback {
+      display: none;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .form-feedback.success {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #166534;
+    }
+    .form-feedback.error {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    /* ── Brand footer blurb ───────────────────────────────────── */
+    .brand-blurb {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    .brand-blurb strong { font-size: 1.05rem; }
+    .brand-blurb p { margin: 0.25rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" width="32" height="32" fill="none">
+          <rect rx="8" width="32" height="32" fill="url(#lgC)"/>
+          <path d="M10 16l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="lgC" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+        </svg>
+        <span>CoreConvert</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#converter" class="nav-link">Tools</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== CONTENT ========== -->
+  <main class="contact-wrap">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. If you have questions, feedback, or need assistance using CoreConvert, please reach out using the form below.</p>
+
+    <h2>General Inquiries</h2>
+    <p>For general questions about CoreConvert, features, or supported file conversions, contact us anytime.</p>
+
+    <h2>Support</h2>
+    <p>If you are experiencing issues with file uploads, conversions, or downloads, please include the following information when contacting us:</p>
+    <ul>
+      <li>File type you attempted to convert</li>
+      <li>Conversion format (example: XML → CSV)</li>
+      <li>A brief description of the issue</li>
+    </ul>
+    <p>This helps us resolve problems faster.</p>
+
+    <h2>Contact Form</h2>
+
+    <div id="formFeedback" class="form-feedback" role="alert"></div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" name="name" placeholder="Your name" required />
+      </div>
+      <div class="form-group">
+        <label for="contactEmail">Email Address</label>
+        <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="contactSubject">Subject</label>
+        <input type="text" id="contactSubject" name="subject" placeholder="How can we help?" required />
+      </div>
+      <div class="form-group">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" placeholder="Write your message here…" required></textarea>
+      </div>
+      <button class="btn-send" type="submit" id="sendBtn">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 9l14-7-7 14V9H2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        Send Message
+      </button>
+    </form>
+
+    <h2>Response Time</h2>
+    <p>We aim to respond to all inquiries within <strong>24–48 hours</strong>.</p>
+
+    <h2>Business &amp; Partnerships</h2>
+    <p>For partnerships, integrations, or business inquiries related to CoreConvert services, please mention <strong>"Partnership Inquiry"</strong> in the subject line.</p>
+
+    <h2>Service Availability</h2>
+    <p>CoreConvert is an online file conversion platform designed to help users convert files quickly and efficiently. If you encounter technical issues, our support team will work to resolve them as soon as possible.</p>
+
+    <div class="brand-blurb">
+      <strong>CoreConvert</strong>
+      <p>Convert files instantly with powerful online tools.</p>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg class="logo-icon" viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect rx="8" width="32" height="32" fill="url(#lgC2)"/>
+            <path d="M10 16l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs><linearGradient id="lgC2" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+          </svg>
+          <span>CoreConvert</span>
+        </a>
+        <p class="footer-tagline">Fast, secure file conversion for everyone.</p>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#converter">Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 CoreConvert. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    document.getElementById('navHamburger').addEventListener('click', function () {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+    // Navbar tint
+    const nb = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nb.style.background = window.scrollY > 40 ? 'rgba(255,255,255,.95)' : 'rgba(255,255,255,.82)';
+    }, { passive: true });
+
+    // ── Contact form submit ────────────────────────────────────
+    // Get your free key at https://web3forms.com/ — enter rajveerpd14@gmail.com
+    // then paste the key you receive here:
+    const WEB3FORMS_KEY = 'f2df8f6d-649e-459a-9877-e014590f876c';
+
+    const form      = document.getElementById('contactForm');
+    const sendBtn   = document.getElementById('sendBtn');
+    const feedback  = document.getElementById('formFeedback');
+
+    function showFeedback(type, msg) {
+      feedback.className = 'form-feedback ' + type;
+      feedback.textContent = msg;
+      feedback.style.display = 'flex';
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name    = document.getElementById('contactName').value.trim();
+      const email   = document.getElementById('contactEmail').value.trim();
+      const subject = document.getElementById('contactSubject').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        showFeedback('error', 'Please fill in all fields before sending.');
+        return;
+      }
+
+      if (WEB3FORMS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+        showFeedback('error', 'Contact form not configured yet. Get a free key at web3forms.com and paste it into contact.html.');
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Sending…';
+      feedback.style.display = 'none';
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            name, email, subject, message,
+          }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok || !data.success) throw new Error(data.message || 'Failed to send message.');
+
+        showFeedback('success', "Message sent! We'll get back to you within 24–48 hours.");
+        form.reset();
+      } catch (err) {
+        showFeedback('error', err.message);
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = `
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M2 9l14-7-7 14V9H2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+          Send Message`;
+      }
+    });
+  </script>
+</body>
+</html>
